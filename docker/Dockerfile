@@ -46,3 +46,13 @@ ENV CPLUS_INCLUDE_PATH=/usr/local/cuda/include:${CPLUS_INCLUDE_PATH}
 ENV C_INCLUDE_PATH=/usr/local/cuda/include:${C_INCLUDE_PATH}
 ENV LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/nvidia/lib64:${LIBRARY_PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
+
+# for llvm-toolchain-10
+# RUN apt-get install --no-install-recommends -y \
+#   curl ca-certificates gpg-agent
+# RUN touch llvm.list && \
+#   echo "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-10 main" >> llvm.list && \
+#   echo "deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-10 main%" >> llvm.list && \
+#   mv llvm.list /etc/apt/sources.list.d
+# RUN curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
+# RUN apt-get update && apt-get install --no-install-recommends -y clang-10 lldb-10 lld-10
